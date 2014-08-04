@@ -84,7 +84,7 @@ module CollageBuilder
       total  += image.rows
     end
     new_height = (total / @images.size).to_i
-    new_height = [200, new_height].min
+    new_height = [300, new_height].min
     return new_height
   end
 
