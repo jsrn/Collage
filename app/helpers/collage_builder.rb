@@ -10,6 +10,8 @@ module CollageBuilder
 
     x_off, row = 0, 0
 
+    return false if @images.size > 100
+
     # Handle entries one by one
     @images.sort.each do |entry|
       content = entry.get_input_stream.read
@@ -82,7 +84,7 @@ module CollageBuilder
       total  += image.rows
     end
     new_height = (total / @images.size).to_i
-    new_height = [300, new_height].min
+    new_height = [200, new_height].min
     return new_height
   end
 
