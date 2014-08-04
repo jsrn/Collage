@@ -28,9 +28,14 @@
 			</div>
 		</div>
 		<% if flash[:upload_failed] %>
-			<div class="alert alert-danger" role="alert">
-				There was a problem uploading your file.
-			</div>
-			<% end %>
+		<div class="alert alert-danger" role="alert">
+			There was a problem uploading your file.
+		</div>
+		<% end %>
+		<% if flash[:no_file_selected] %>
+		<div class="alert alert-warning" role="alert">
+			You need to select a file to upload.
+		</div>
+		<% end %>
 	</div>
 </div>
