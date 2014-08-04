@@ -11,7 +11,7 @@ class UploadController < ApplicationController
 
     content = CollageBuilder::build(params[:zipfile].path)
 
-    send_data content, :type => 'image/png',:disposition => 'inline'
+    send_data content, :type => 'image/png', :disposition => 'attachment', filename: "collage-#{Time.now.to_i}.png"
     return
   end
 end
