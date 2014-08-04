@@ -81,7 +81,9 @@ module CollageBuilder
       image   = Magick::Image::from_blob(content)[0]
       total  += image.rows
     end
-    return (total / @images.size).to_i
+    new_height = (total / @images.size).to_i
+    new_height = [300, new_height].min
+    return new_height
   end
 
   def trim_image
