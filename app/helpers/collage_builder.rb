@@ -69,7 +69,7 @@ module CollageBuilder
 
   def prepare_canvas
     @canvas = Magick::Image.new(@max_width, 100)
-    @canvas.format = "PNG"
+    @canvas.format = "JPEG"
     @canvas.background_color = "Transparent"
   end
 
