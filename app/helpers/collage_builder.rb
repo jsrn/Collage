@@ -64,13 +64,14 @@ module CollageBuilder
     @max_width         = 1200
     @right_most_point  = 0 
     @border_width      = 2
-    @background_colour = "blue"
+    @background_colour = "#333"
   end
 
   def prepare_canvas
-    @canvas = Magick::Image.new(@max_width, 100)
+    @canvas = Magick::Image.new(@max_width, 1)
+    @canvas.color_reset!(@background_colour.to_s)
+    @canvas.background_color = @background_colour.to_s
     @canvas.format = "JPEG"
-    @canvas.background_color = "Transparent"
   end
 
   def get_mean_height
