@@ -7,6 +7,8 @@ effectively, but that's a problem for another time.
 
 Pull requests welcome!
 
+[See it in action](http://screenshot-collage.herokuapp.com)
+
 # License
 
 The MIT License (MIT)
