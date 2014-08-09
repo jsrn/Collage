@@ -12,7 +12,7 @@ class UploadController < ApplicationController
     content_type = params[:zipfile].content_type
     if not ["application/zip", "application/octet-stream"].include? content_type
       redirect_to "/", :flash => {
-        :upload_failed => true
+        :invalid_file => true
       }
       return
     end
