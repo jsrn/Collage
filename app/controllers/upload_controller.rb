@@ -9,13 +9,13 @@ class UploadController < ApplicationController
       return
     end
 
-    content_type = params[:zipfile].content_type
-    if not ["application/zip", "application/octet-stream"].include? content_type
-      redirect_to "/", :flash => {
-        :invalid_file => true
-      }
-      return
-    end
+    #content_type = params[:zipfile].content_type
+    #if not ["application/zip", "application/octet-stream"].include? content_type
+    #  redirect_to "/", :flash => {
+    #    :invalid_file => true
+    #  }
+    #  return
+    #end
 
     content = CollageBuilder::build(params[:zipfile].path)
 
